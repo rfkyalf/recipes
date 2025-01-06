@@ -1,3 +1,3 @@
 <template>
-  <div>pepek</div>
+  <NuxtLayout><NuxtPage /></NuxtLayout>
 </template>
