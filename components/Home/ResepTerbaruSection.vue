@@ -12,14 +12,19 @@
         :statusCode="error.statusCode"
         :message="error.message"
       />
+      <div
+        v-if="status === 'pending'"
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-2 gap-y-4"
+      >
+        <RecipeCardLoading v-for="index in 3" :key="index" />
+      </div>
       <ul
-        v-else
+        v-if="status === 'success' && data?.data.newestRecipes"
         class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-2 gap-y-4"
       >
         <li v-for="(recipe, index) in data?.data.newestRecipes" :key="index">
-          <RecipeCardLoading v-if="status === 'pending'" />
           <RecipeCard
-            v-if="status === 'success'"
+            :linkTitle="recipe.title"
             :to="`/detail/${recipe.slug}`"
             :title="recipe.title"
             :image="recipe.image"

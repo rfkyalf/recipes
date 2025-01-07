@@ -1,5 +1,9 @@
 <template>
-  <NuxtLink :to="to" class="flex flex-col gap-y-1 md:gap-y-2">
+  <NuxtLink
+    :title="linkTitle"
+    :to="to"
+    class="flex flex-col gap-y-1 md:gap-y-2"
+  >
     <div
       class="w-full h-[170px] md:h-[200px] lg:h-[250px] overflow-hidden rounded"
     >
@@ -9,7 +13,7 @@
       />
     </div>
     <h4
-      class="text-base lg:text-lg text-neutral-900 font-medium hover:underline"
+      class="text-base lg:text-lg text-neutral-900 hover:text-neutral-700 font-medium"
     >
       {{ title }}
     </h4>
@@ -19,7 +23,7 @@
         {{ duration }}
       </span>
       <span v-if="calory" class="flex items-center gap-x-2">
-        <Icon name="ph:chef-hat-light" class="size-4 lg:size-5" />
+        <Icon name="basil:fire-outline" class="size-4 lg:size-5" />
         {{ calory }}
       </span>
       <span class="flex items-center gap-x-2">
@@ -33,6 +37,7 @@
 <script setup lang="ts">
 defineProps<{
   to: string;
+  linkTitle: string;
   image: string;
   title: string;
   duration: string;

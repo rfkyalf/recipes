@@ -3,7 +3,7 @@
     <section class="h-screen w-full flex items-center justify-center">
       Hero Section
     </section>
-    <ResepTerbaruSection
+    <HomeResepTerbaruSection
       :data="data"
       :status="status"
       :error="

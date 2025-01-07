@@ -39,8 +39,9 @@ export default defineEventHandler(async (event) => {
       title: string;
       image: string;
       slug: string;
-      duration: string;
-      difficulty: string;
+      duration: string | null;
+      calory: string | null;
+      difficulty: string | null;
     }> = [];
 
     $('section._recipes-list .row > div').each((_, element) => {
@@ -63,14 +64,16 @@ export default defineEventHandler(async (event) => {
         .find('a.btn.item.icon_difficulty')
         .text()
         .trim();
+      const calory = $(element).find('a.btn.item.icon_fire').text().trim();
 
       if (title && image && slug) {
         newestRecipes.push({
           title,
           image,
           slug,
-          duration: duration || 'Unknown',
-          difficulty: difficulty || 'Unknown',
+          duration: duration || null,
+          calory: calory || null,
+          difficulty: difficulty || null,
         });
       }
     });
