@@ -1,10 +1,8 @@
 <template>
-  <section class="container mx-auto p-4">
+  <section class="container mx-auto px-4">
     <div class="flex flex-col gap-4">
       <div class="flex justify-between items-end">
-        <h3 class="text-2xl md:text-3xl text-neutral-900 font-bold">
-          Resep Terbaru
-        </h3>
+        <HeaderSection title="Resep Terbaru" />
         <LihatSelengkapnyaButton to="/resep" class="hidden md:flex" />
       </div>
       <ErrorDisplay
@@ -24,7 +22,6 @@
       >
         <li v-for="(recipe, index) in data?.data.newestRecipes" :key="index">
           <RecipeCard
-            :linkTitle="recipe.title"
             :to="`/detail/${recipe.slug}`"
             :title="recipe.title"
             :image="recipe.image"

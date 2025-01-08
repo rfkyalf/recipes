@@ -1,19 +1,16 @@
 <template>
-  <NuxtLink
-    :title="linkTitle"
-    :to="to"
-    class="flex flex-col gap-y-1 md:gap-y-2"
-  >
+  <NuxtLink :title="title" :to="to" class="flex flex-col gap-y-1 md:gap-y-2">
     <div
       class="w-full h-[170px] md:h-[200px] lg:h-[250px] overflow-hidden rounded"
     >
       <NuxtImg
         :src="image"
+        :alt="title"
         class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
       />
     </div>
     <h4
-      class="text-base lg:text-lg text-neutral-900 hover:text-neutral-700 font-medium"
+      class="text-base lg:text-lg text-neutral-900 hover:text-pink-700 font-medium"
     >
       {{ title }}
     </h4>
@@ -37,7 +34,6 @@
 <script setup lang="ts">
 defineProps<{
   to: string;
-  linkTitle: string;
   image: string;
   title: string;
   duration: string;
