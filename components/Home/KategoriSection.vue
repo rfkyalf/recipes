@@ -17,7 +17,7 @@
           :key="index"
         />
         <NuxtLink
-          v-if="status === 'success' && data?.data.categories"
+          v-if="status === 'success'"
           :to="`/resep/${kategori.slug}`"
           :title="kategori.title"
           v-for="kategori in data?.data.categories"
@@ -30,7 +30,7 @@
             class="h-full w-full object-cover object-center absolute inset-0"
           />
           <div
-            class="absolute inset-0 h-full w-full bg-neutral-950/40 group-hover:bg-neutral-950/60 text-neutral-50 font-semibold text-xl md:text-2xl text-center flex items-center justify-center"
+            class="absolute inset-0 h-full w-full bg-neutral-950/40 group-hover:bg-neutral-950/60 text-neutral-50 font-semibold text-xl md:text-2xl text-center flex items-center justify-center p-4"
           >
             {{ kategori.title }}
           </div>

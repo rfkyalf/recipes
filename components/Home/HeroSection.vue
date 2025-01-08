@@ -1,6 +1,6 @@
 <template>
   <section
-    class="lg:h-screen w-full bg-[#f1f1f1] flex items-center justify-center"
+    class="relative overflow-hidden lg:h-screen w-full bg-[#F1F1F1] flex items-center justify-center"
   >
     <div
       class="container mx-auto px-4 py-4 md:py-12 lg:py-0 flex flex-col gap-y-8 md:flex-row md:items-center md:justify-between"
@@ -9,7 +9,8 @@
         <h2
           class="text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-900 md:max-w-[400px] lg:max-w-[450px] xl:max-w-[500px]"
         >
-          <span class="text-pink-500">Inspirasi</span> Masakan Sehari-hari
+          <span class="text-pink-500">Inspirasi</span>
+          Masakan Sehari-hari
         </h2>
         <p
           class="text-base lg:text-lg text-neutral-700 md:max-w-[400px] lg:max-w-[500px] xl:max-w-[600px] text-pretty"
@@ -24,7 +25,7 @@
         </NuxtLink>
       </div>
       <NuxtImg
-        src="/hero.png"
+        src="/images/hero.png"
         alt="Hero Image"
         class="size-[90%] md:size-[300px] lg:size-[400px] xl:size-[500px] object-cover self-center"
       />
